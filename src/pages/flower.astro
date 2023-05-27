@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { Flower } from '../components/Flower';
+---
+
+<Layout title="makunouchi bento">
+	<main>
+		<div class="instructions">
+			<Flower client:only="solid-js" />
+		</div>
+	</main>
+</Layout>
