@@ -23,17 +23,21 @@ export const Flower: Component = () => {
   fetchFlowerData();
 
   const [data, { refetch }] = createResource(fetchDogData);
-  refetch(fetchDogData());
+
+  const handleClick = () => {
+    refetch(fetchDogData());
+  }
 
   return (
     <>
     {flower._count !== 0  ? (
       <div>
-        <img src={dog.message} alt="" />
-        <p class="text-right">powered by <a href="https://dog.ceo/dog-api/">https://dog.ceo/dog-api/</a></p>
         <p>🐶{flower._items[0].mmdd}、{flower._items[0].flower}</p>
         <p>🐶今日の花言葉は、<strong>「{flower._items[0].lang}」</strong>だワン！</p>
         <p class="mt-2 text-right">powered by whatistodayAPI</p>
+        <button onclick={handleClick} class="w-3/12 bg-transparent hover:bg-yellow-500 hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">🐶画像を変更する</button>
+        <img src={dog.message} alt="dogs image" class="mt-2"/>
+        <p class="text-right">powered by <a href="https://dog.ceo/dog-api/">https://dog.ceo/dog-api/</a></p>
       </div>
     ) : (
       <p>loading...🐕</p>
