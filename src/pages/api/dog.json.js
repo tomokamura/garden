@@ -1,5 +1,5 @@
 export const get = async ({ params, request }) => {
-  let resData;
+  var resData;
 
   try {
     const response = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -10,9 +10,6 @@ export const get = async ({ params, request }) => {
   }
 
   return {
-    headers: {
-      'Cache-Control': 'no-store', // クライアント側のキャッシュを無効化
-    },
     body: JSON.stringify({
       data: resData ? resData : null
     })
