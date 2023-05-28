@@ -23,7 +23,7 @@ export const Flower: Component = () => {
   fetchFlowerData();
 
   const [data, { refetch }] = createResource(fetchDogData);
-  refetch();
+  refetch(data);
 
   return (
     <>
