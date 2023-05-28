@@ -20,7 +20,6 @@ export const Flower: Component = () => {
       {cache: 'no-store'}
     ).then((response) => response.json())
     .then((data) => {
-      console.log("ooooooo");
       setDog(data.data);
     });
   }
@@ -28,10 +27,7 @@ export const Flower: Component = () => {
   fetchDogData();
 
   const handleClick = async () => {
-    console.log(dog);
     await fetchDogData();
-    console.log(dog);
-
   }
 
   return (
