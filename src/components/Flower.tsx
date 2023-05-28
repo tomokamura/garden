@@ -22,10 +22,8 @@ export const Flower: Component = () => {
   }
   fetchFlowerData();
 
-  const [data, { refetch }] = createResource(fetchDogData);
-
   const handleClick = () => {
-    refetch(fetchDogData());
+    fetchDogData();
   }
 
   return (
