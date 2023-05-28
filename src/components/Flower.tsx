@@ -15,13 +15,13 @@ export const Flower: Component = () => {
     });
   }
   const fetchDogData = async () => {
-    setDog(initialDogData);
     await fetch("/api/dog.json").then((response) => response.json())
     .then((data) => {
       setDog(data.data);
     });
   }
   fetchFlowerData();
+
   const [data, { refetch }] = createResource(fetchDogData);
   refetch();
 
