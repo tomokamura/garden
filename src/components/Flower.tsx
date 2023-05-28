@@ -16,7 +16,9 @@ export const Flower: Component = () => {
   }
   const fetchDogData = async () => {
     console.log("here");
-    await fetch("/api/dog.json").then((response) => response.json())
+    await fetch("/api/dog.json",
+      {cache: 'no-store'}
+    ).then((response) => response.json())
     .then((data) => {
       console.log("ooooooo");
       setDog(data.data);
