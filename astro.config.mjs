@@ -5,5 +5,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'hybrid',
+  experimental: {
+    hybridOutput: true,
+  },
   integrations: [solidJs(), tailwind()]
 });
