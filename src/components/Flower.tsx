@@ -23,9 +23,12 @@ export const Flower: Component = () => {
   fetchFlowerData();
   fetchDogData();
 
-  const handleClick = () => {
-    setDog(initialDogData);
-    fetchDogData();
+  const handleClick = async () => {
+    setDog({message: ""});
+    console.log(dog);
+    await fetchDogData();
+    console.log(dog);
+
   }
 
   return (
