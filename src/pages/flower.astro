@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Flower } from '../components/Flower';
+---
+
+<Layout title="flower">
+	<main>
+		<div class="wrapper">
+			<Flower client:only="solid-js" />
+		</div>
+	</main>
+</Layout>
