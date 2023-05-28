@@ -1,29 +1,29 @@
 import type { Component } from "solid-js";
+import { createStore } from "solid-js/store"
+
 
 export const Flower: Component = () => {
-  let data = {"_count":1,"_last":null,"_items":[{"flower":"花の名前を取得できませんでした","key":"000","lang":"花言葉を取得できませんでした","mmdd":"1111"}]}
-
-  const dt = new Date();
-  const m = ("00" + (dt.getMonth()+1)).slice(-2);
-  const d = ("00" + (dt.getDate())).slice(-2);
-  const mmdd = m +  d;
-
-  fetch(`https://api.whatistoday.ml/v2/birthflower/${mmdd}`, {
-    method: 'GET'
-  })
-  .then(response => {
-    if (!response.ok) {
-      console.error('サーバーエラー');
-    }
-    data = response;
-  })
-  .catch(error => {
-    console.error('失敗しました', error);
-  });
+  const initialData = {"_count":0,"_last":null,"_items":[{"flower":"initial","key":"000","lang":"initial","mmdd":"0000"}]}
+  const [flower, setFlower] = createStore(initialData);
+  const fetchFlowerData = async () => {
+    await fetch("/api/flower.json").then((response) => response.json())
+    .then((data) => {
+      setFlower(data.data);
+    });
+  }
+  fetchFlowerData();
 
   return (
     <>
-      <p>{data?._items[0].flower}</p>
+    {flower._count !== 0  ? (
+      <div>
+        <p>🐶{flower._items[0].mmdd}、{flower._items[0].flower}</p>
+        <p>🐶今日の花言葉は、「{flower._items[0].lang}」だワン！</p>
+        <p class="mt-8">powered by whatistodayAPI</p>
+      </div>
+    ) : (
+      <p>loading...🐕</p>
+    ) }
     </>
   );
 };

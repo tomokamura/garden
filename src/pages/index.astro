@@ -1,18 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1 class="text-3xl text-center">🌳🌻Welcome to my garden!🐽🌳</h1>
-		<ul role="list" class="link-card-grid mt-8s">
+		<h1 class="text-3xl text-center">
+      Welcome to my garden!
+    </h1>
+		<ul role="list" class="link-card-grid mt-8">
 			<Card
 				href="/flower"
-				title="🌻"
+				title="🐶「今日の🌻言葉を教えてあげるワン！」"
         body=""
 			/>
 		</ul>
+    <section class="coloful-section m-auto w-fit mt-8">
+      <span>🌻</span>
+      <span>🌳</span>
+      <span>🌻</span>
+      <span>🌳</span>
+      <span>🌻</span>
+    </section>
 	</main>
 </Layout>
 
