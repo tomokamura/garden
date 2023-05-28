@@ -3,6 +3,7 @@ export const get = async ({ params, request }) => {
 
   try {
     const response = await fetch('https://dog.ceo/api/breeds/image/random');
+    response.headers['cache-control'] = 'no-cache'
     const data = await response.json();
     resData = data;
   } catch (error) {
