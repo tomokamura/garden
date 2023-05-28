@@ -21,8 +21,10 @@ export const Flower: Component = () => {
     });
   }
   fetchFlowerData();
+  fetchDogData();
 
   const handleClick = () => {
+    setDog(initialDogData);
     fetchDogData();
   }
 
