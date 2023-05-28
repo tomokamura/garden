@@ -1,7 +1,7 @@
 export const get = async ({ params, request }) => {
   let resData;
 
-  await fetch(`https://dog.ceo/api/breeds/image/random`)
+  await fetch(`https://dog.ceo/api/breeds/image/random`, {cache: 'no-cache'})
   .then((response) => response.json())
   .then((data) => {
     resData = data;
