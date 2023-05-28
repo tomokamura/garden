@@ -28,7 +28,6 @@ export const Flower: Component = () => {
   fetchDogData();
 
   const handleClick = async () => {
-    setDog({message: ""});
     console.log(dog);
     await fetchDogData();
     console.log(dog);
