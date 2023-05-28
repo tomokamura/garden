@@ -1,5 +1,6 @@
 import type { Component } from "solid-js";
 import { createStore } from "solid-js/store"
+import { createResource } from "solid-js";
 
 
 export const Flower: Component = () => {
@@ -21,7 +22,8 @@ export const Flower: Component = () => {
     });
   }
   fetchFlowerData();
-  fetchDogData();
+  const [data, { refetch }] = createResource(fetchDogData);
+  refetch();
 
   return (
     <>
