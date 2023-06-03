@@ -1,3 +1,7 @@
+export const config = {
+  runtime: 'edge',
+}
+
 export const get = async ({ params, request }) => {
   const dt = new Date();
   const m = ("00" + (dt.getMonth()+1)).slice(-2);
@@ -15,6 +19,13 @@ export const get = async ({ params, request }) => {
   return {
     body: JSON.stringify({
       data: resData ? resData : null
+    },
+    {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+        'cache-control': 'public, max-age=0, must-revalidate"',
+      },
     })
   }
 };

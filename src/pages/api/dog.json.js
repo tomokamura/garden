@@ -16,6 +16,13 @@ export const get = async ({ params, request }) => {
   return {
     body: JSON.stringify({
       data: resData ? resData : null
+    },
+    {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+        'cache-control': 'public, max-age=0, must-revalidate"',
+      },
     })
   };
 };
