@@ -21,7 +21,8 @@ export const get = async ({ params, request }) => {
       status: 200,
       headers: {
         'content-type': 'application/json',
-        'cache-control': 'public, max-age=0, must-revalidate"',
+        'cache-control': 'public, max-age=0, must-revalidate',
+        'X-Vercel-Cache': 'REVALIDATED',
       },
     })
   };
