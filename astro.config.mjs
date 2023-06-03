@@ -10,6 +10,13 @@ export default defineConfig({
   experimental: {
     hybridOutput: true
   },
+  server: {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      'cache-control': 'public, max-age=0, must-revalidate"',
+      'X-Vercel-Cache': 'REVALIDATED',
+    }
+  },
   integrations: [solidJs(), tailwind()],
   adapter: netlify()
 });
