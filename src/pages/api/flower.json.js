@@ -12,7 +12,6 @@ export const get = async ({ params, request }) => {
 
   await fetch(`https://api.whatistoday.ml/v2/birthflower/${mmdd}`)
   .then((response) => {
-    response.setHeader('X-Vercel-Cache', 'REVALIDATED');
     response.json();
   })
   .then((data) => {
