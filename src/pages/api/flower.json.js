@@ -1,7 +1,3 @@
-export const config = {
-  runtime: 'edge',
-}
-
 export const get = async ({ params, request }) => {
   const dt = new Date();
   const m = ("00" + (dt.getMonth()+1)).slice(-2);
@@ -11,9 +7,7 @@ export const get = async ({ params, request }) => {
   let resData;
 
   await fetch(`https://api.whatistoday.ml/v2/birthflower/${mmdd}`)
-  .then((response) => {
-    response.json();
-  })
+  .then((response) => response.json())
   .then((data) => {
     resData = data;
   });
@@ -21,14 +15,6 @@ export const get = async ({ params, request }) => {
   return {
     body: JSON.stringify({
       data: resData ? resData : null
-    },
-    {
-      status: 200,
-      headers: {
-        'content-type': 'application/json',
-        'cache-control': 'public, max-age=0, must-revalidate',
-        'X-Vercel-Cache': 'REVALIDATED',
-      },
     })
   }
 };
