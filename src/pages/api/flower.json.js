@@ -11,7 +11,10 @@ export const get = async ({ params, request }) => {
   let resData;
 
   await fetch(`https://api.whatistoday.ml/v2/birthflower/${mmdd}`)
-  .then((response) => response.json())
+  .then((response) => {
+    response.setHeader('X-Vercel-Cache', 'REVALIDATED');
+    response.json();
+  })
   .then((data) => {
     resData = data;
   });

@@ -1,17 +1,14 @@
 export const get = async ({ params, request }) => {
-  var resData;
+  let resData;
 
-  try {
-    const response = await fetch('https://dog.ceo/api/breeds/image/random',
-      {
-        "Cache-Control": "no-cache"
-      }
-    );
-    const data = await response.json();
+  await fetch('https://dog.ceo/api/breeds/image/random')
+  .then((response) => {
+    response.setHeader('X-Vercel-Cache', 'REVALIDATED');
+    response.json();
+  })
+  .then((data) => {
     resData = data;
-  } catch (error) {
-    console.error(error);
-  }
+  });
 
   return {
     body: JSON.stringify({
