@@ -2,11 +2,7 @@ export const get = async ({ params, request }) => {
   var resData;
 
   try {
-    const response = await fetch('https://dog.ceo/api/breeds/image/random',
-      {
-        "Cache-Control": "no-cache"
-      }
-    );
+    const response = await fetch('https://dog.ceo/api/breeds/image/random');
     const data = await response.json();
     resData = data;
   } catch (error) {
