@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Whether } from '../components/Whether';
+---
+
+<Layout title="今日の花言葉">
+	<main>
+		<div class="wrapper">
+			<Whether client:only="solid-js" />
+		</div>
+	</main>
+</Layout>
