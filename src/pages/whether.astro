@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Whether } from '../components/Whether';
+import { WhetherCmp } from '../components/Whether';
 ---
 
-<Layout title="今日の花言葉">
+<Layout title="あの日の東京の雨量は？">
 	<main>
 		<div class="wrapper">
-			<Whether client:only="solid-js" />
+			<WhetherCmp client:only="solid-js" />
 		</div>
 	</main>
 </Layout>

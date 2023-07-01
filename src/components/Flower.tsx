@@ -3,7 +3,7 @@ import { createStore } from "solid-js/store"
 import { createResource } from "solid-js";
 
 
-export const Flower: Component = () => {
+export const FlowerCmp: Component = () => {
   const initialFlowerData = {"_count":0,"_last":null,"_items":[{"flower":"initial","key":"000","lang":"initial","mmdd":"0000"}]}
   const initialDogData = {message:""}
   const [flower, setFlower] = createStore(initialFlowerData);

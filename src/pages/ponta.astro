@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { PontaCmp } from '../components/Ponta';
+---
+
+<Layout title="ぽんた">
+	<main>
+		<div class="wrapper">
+			<PontaCmp client:only="solid-js" />
+		</div>
+	</main>
+</Layout>

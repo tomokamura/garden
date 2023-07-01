@@ -2,7 +2,7 @@ import type { Component } from "solid-js";
 import { createStore } from "solid-js/store"
 import { createResource, createSignal } from "solid-js";
 
-export const Whether: Component = () => {
+export const WhetherCmp: Component = () => {
   const [whether, setWhether] = createSignal(0);
   const [date, setDate] = createSignal('');
   const [text, setText] = createSignal('');
