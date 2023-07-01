@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Flower } from '../components/Flower';
+import { FlowerCmp } from '../components/Flower';
 ---
 
-<Layout title="今日の花言葉">
+<Layout title="今日の花言葉と犬">
 	<main>
 		<div class="wrapper">
-			<Flower client:only="solid-js" />
+			<FlowerCmp client:only="solid-js" />
 		</div>
 	</main>
 </Layout>
