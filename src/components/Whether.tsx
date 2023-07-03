@@ -1,6 +1,5 @@
 import type { Component } from "solid-js";
-import { createStore } from "solid-js/store"
-import { createResource, createSignal } from "solid-js";
+import { createSignal } from "solid-js";
 
 export const WhetherCmp: Component = () => {
   const [whether, setWhether] = createSignal(0);
